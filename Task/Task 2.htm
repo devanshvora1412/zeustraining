@@ -8,13 +8,44 @@
     <link rel="stylesheet" href="task2.css">
     <!-- <script src="valid.js"></script> -->
     <script>
-    function validateForm(uname,ucomments) {
-        const uname = document.getElementById('name')
-        const ucomments = document.getElementById('comments')
-        if (uname == "" || ucomments == "") {
-          alert("No field should be empty");
-          return false;
-        }</script>
+        function validateForm() {
+            const uname = document.getElementById('Name').value;
+            const ucomments = document.getElementById('comments').value;
+            const male = document.getElementById('male').checked;
+            const female = document.getElementById('female').checked;
+            // const myname = document.getElementById('Name');
+            // const mycomments = document.getElementById('comments');
+            // let radio1 = document.getElementById("male");
+            // let radio2 = document.getElementById("female");
+            // const gender = document.querySelector('input[name="gender"]:checked');
+    
+            if (uname.trim() === "" ) {
+                alert("No field should be empty");
+                document.getElementById("Name").focus();
+                return false;
+                // mycomments.select()
+            }
+            else if( ucomments.trim() === ""){
+                alert("No field should be empty");
+                document.getElementById("comments").focus();
+                return false;
+
+            }
+
+            if (!male && !female) {
+            alert("Please select your gender");
+            return false;
+            }
+
+        //     else if(male && female) {
+        //     alert("You cannot select both the genders");
+        //     return false;
+        //     radio1.checked && radio2.checked == false
+        // }
+
+        return true;
+        }
+    </script>
 </head>
 <body>
    <div id="heading"><div id="txt"><h1>My first web page</h1></div>
@@ -76,14 +107,14 @@
     
         <label for="Gender">Are you:</label><br>
         <br>
-        <input type="radio" id="male" name="male" value="Male">
+        <input type="radio" id="male" name="gend" value="Male">
         <label for="male"> Male</label><br>
         <br>
-        <input type="radio" id="female" name="vehicle2" value="Car">
+        <input type="radio" id="female" name="gend" value="female">
         <label for="female"> Female</label><br>
         <br>
         <input type="submit" value="Submit Query" style= "background-color: lightgrey;">   
     </form>
 </body>
 </html>
-// Changing file to push, message is changed completely 
+<!-- Changing file to push, message is changed completely -->

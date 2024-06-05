@@ -7,14 +7,39 @@
     <title>Task 2</title>
     <link rel="stylesheet" href="task2.css">
     <!-- <script src="valid.js"></script> -->
-    <script>
-    function validateForm(uname,ucomments) {
-        const uname = document.getElementById('name')
-        const ucomments = document.getElementById('comments')
-        if (uname == "" || ucomments == "") {
-          alert("No field should be empty");
-          return false;
-        }</script>
+    <script >
+        function submitForm() {             
+            const x = document.getElementById("nm").value;
+            const y = document.getElementById("txt").value;
+            let rad1 = document.getElementById("Male").checked;
+            let rad2 = document.getElementById("Female").checked;
+
+
+            if (x.trim()=== ""){
+
+                alert("All fields are compulsory.");
+                document.getElementById("nm").focus();
+                                
+                return false;
+                
+            } else if (y.trim()=== ""){
+
+                alert("All fields are compulsory.");
+                document.getElementById("txt").focus();
+                return false;
+                
+            
+
+            }             
+            else if (!rad1 && !rad2){
+                alert("All fields are compulsory.");
+                document.getElementById("Male").focus();
+                return false;
+            }
+            return true;
+        }
+       
+    </script>
 </head>
 <body>
    <div id="heading"><div id="txt"><h1>My first web page</h1></div>
@@ -86,4 +111,3 @@
     </form>
 </body>
 </html>
-// Changing file to push, message is changed completely 

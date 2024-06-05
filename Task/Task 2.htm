@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="task2.css">
     <!-- <script src="valid.js"></script> -->
     <script>
-    function validateForm(uname,ucomments) {
-        const uname = document.getElementById('name')
-        const ucomments = document.getElementById('comments')
-        if (uname == "" || ucomments == "") {
-          alert("No field should be empty");
-          return false;
-        }</script>
+        function validateForm() {             
+            const x = document.getElementById("Name").value;
+            const y = document.getElementById("comments").value;
+            let maleChecked = document.getElementById("male").checked;
+            let femaleChecked = document.getElementById("female").checked;
+
+            if (x.trim() === ""){
+                alert("All fields are compulsory.");
+                document.getElementById("Name").focus();
+                return false;
+            } else if (y.trim() === ""){
+                alert("All fields are compulsory.");
+                document.getElementById("comments").focus();
+                return false;
+            } else if (!maleChecked && !femaleChecked){
+                alert("All fields are compulsory.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
    <div id="heading"><div id="txt"><h1>My first web page</h1></div>
@@ -63,27 +77,17 @@
         </table>
     <h3>Some random form</h3>
     <p><b><i>NOTE:</i></b>It looks the part, but won't do anything.</p>
-    <form name = "yourForm" onsubmit="return validateForm()">
-        <label for="Name"> Name:</label><br>
-        <br>
-        <input type="text" id="Name" name="name" placeholder="Your name"><br>
-    <br>
-        <label for="Comments">Comments:</label><br>
-        <br>
-        <textarea name="comments" id="comments" cols="15" rows="10" placeholder="Your comments"></textarea>
-        <br>
-    <br>
-    
-        <label for="Gender">Are you:</label><br>
-        <br>
-        <input type="radio" id="male" name="male" value="Male">
-        <label for="male"> Male</label><br>
-        <br>
-        <input type="radio" id="female" name="vehicle2" value="Car">
-        <label for="female"> Female</label><br>
-        <br>
-        <input type="submit" value="Submit Query" style= "background-color: lightgrey;">   
+    <form name="yourForm" onsubmit="return validateForm()">
+        <label for="Name">Name:</label><br><br>
+        <input type="text" id="Name" name="name" placeholder="Your name"><br><br>
+        <label for="Comments">Comments:</label><br><br>
+        <textarea name="comments" id="comments" cols="15" rows="10" placeholder="Your comments"></textarea><br><br>
+        <label for="Gender">Are you:</label><br><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male"> Male</label><br><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female"> Female</label><br><br>
+        <input type="submit" value="Submit Query" style="background-color: lightgrey;">   
     </form>
 </body>
 </html>
-// Changing file to push, message is changed completely 
